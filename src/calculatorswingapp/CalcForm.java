@@ -56,10 +56,10 @@ public class CalcForm extends javax.swing.JFrame {
         NoButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(350, 350));
-        setMinimumSize(new java.awt.Dimension(350, 350));
-        setPreferredSize(new java.awt.Dimension(350, 350));
-        setSize(new java.awt.Dimension(350, 350));
+        setMaximumSize(new java.awt.Dimension(300, 300));
+        setMinimumSize(new java.awt.Dimension(300, 300));
+        setPreferredSize(new java.awt.Dimension(300, 300));
+        setSize(new java.awt.Dimension(300, 300));
         getContentPane().setLayout(new java.awt.GridLayout(6, 0));
 
         ResultLine.setBackground(new java.awt.Color(255, 255, 255));
@@ -87,10 +87,11 @@ public class CalcForm extends javax.swing.JFrame {
         FirstLine.setAlignmentX(0.0F);
         FirstLine.setAlignmentY(1.0F);
         FirstLine.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        FirstLine.setMaximumSize(new java.awt.Dimension(450, 50));
-        FirstLine.setMinimumSize(new java.awt.Dimension(450, 50));
+        FirstLine.setMaximumSize(new java.awt.Dimension(300, 50));
+        FirstLine.setMinimumSize(new java.awt.Dimension(300, 50));
         FirstLine.setName(""); // NOI18N
-        FirstLine.setPreferredSize(new java.awt.Dimension(450, 50));
+        FirstLine.setPreferredSize(new java.awt.Dimension(300, 50));
+        FirstLine.setLayout(new java.awt.GridLayout());
 
         Num1.setText("1");
         Num1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -103,6 +104,7 @@ public class CalcForm extends javax.swing.JFrame {
                 Num1KeyReleased(evt);
             }
         });
+        FirstLine.add(Num1);
 
         Num2.setText("2");
         Num2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -115,6 +117,7 @@ public class CalcForm extends javax.swing.JFrame {
                 Num2KeyReleased(evt);
             }
         });
+        FirstLine.add(Num2);
 
         Num3.setText("3");
         Num3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -127,6 +130,7 @@ public class CalcForm extends javax.swing.JFrame {
                 Num3KeyReleased(evt);
             }
         });
+        FirstLine.add(Num3);
 
         Plus.setText("+");
         Plus.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -139,68 +143,37 @@ public class CalcForm extends javax.swing.JFrame {
                 PlusKeyReleased(evt);
             }
         });
-
-        javax.swing.GroupLayout FirstLineLayout = new javax.swing.GroupLayout(FirstLine);
-        FirstLine.setLayout(FirstLineLayout);
-        FirstLineLayout.setHorizontalGroup(
-            FirstLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FirstLineLayout.createSequentialGroup()
-                .addComponent(Num1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Num2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Num3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Plus, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
-        FirstLineLayout.setVerticalGroup(
-            FirstLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FirstLineLayout.createSequentialGroup()
-                .addGroup(FirstLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(Num3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                    .addComponent(Num2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Num1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Plus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(244, 244, 244))
-        );
+        FirstLine.add(Plus);
 
         getContentPane().add(FirstLine);
         FirstLine.getAccessibleContext().setAccessibleName("");
 
+        SecondLine.setMaximumSize(new java.awt.Dimension(300, 50));
+        SecondLine.setMinimumSize(new java.awt.Dimension(300, 50));
+        SecondLine.setPreferredSize(new java.awt.Dimension(300, 50));
+        SecondLine.setLayout(new java.awt.GridLayout());
+
         Num4.setText("4");
+        SecondLine.add(Num4);
 
         Num5.setText("5");
+        SecondLine.add(Num5);
 
         Num6.setText("6");
+        SecondLine.add(Num6);
 
         Minus.setText("-");
-
-        javax.swing.GroupLayout SecondLineLayout = new javax.swing.GroupLayout(SecondLine);
-        SecondLine.setLayout(SecondLineLayout);
-        SecondLineLayout.setHorizontalGroup(
-            SecondLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SecondLineLayout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addComponent(Num4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Num5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Num6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Minus, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        SecondLineLayout.setVerticalGroup(
-            SecondLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Num4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(Num5, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(Num6, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(Minus, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        SecondLine.add(Minus);
 
         getContentPane().add(SecondLine);
 
+        ThirdLine.setMaximumSize(new java.awt.Dimension(300, 50));
+        ThirdLine.setMinimumSize(new java.awt.Dimension(300, 50));
+        ThirdLine.setPreferredSize(new java.awt.Dimension(300, 50));
+        ThirdLine.setLayout(new java.awt.GridLayout());
+
         Num7.setText("7");
+        ThirdLine.add(Num7);
 
         Num8.setText("8");
         Num8.addActionListener(new java.awt.event.ActionListener() {
@@ -208,92 +181,48 @@ public class CalcForm extends javax.swing.JFrame {
                 Num8ActionPerformed(evt);
             }
         });
+        ThirdLine.add(Num8);
 
         Num9.setText("9");
+        ThirdLine.add(Num9);
 
         Multiply.setText("*");
-
-        javax.swing.GroupLayout ThirdLineLayout = new javax.swing.GroupLayout(ThirdLine);
-        ThirdLine.setLayout(ThirdLineLayout);
-        ThirdLineLayout.setHorizontalGroup(
-            ThirdLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ThirdLineLayout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addComponent(Num7, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Num8, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Num9, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Multiply, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        ThirdLineLayout.setVerticalGroup(
-            ThirdLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Num7, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(Num8, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(Num9, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(Multiply, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        ThirdLine.add(Multiply);
 
         getContentPane().add(ThirdLine);
 
+        FourthLine.setMaximumSize(new java.awt.Dimension(300, 50));
+        FourthLine.setMinimumSize(new java.awt.Dimension(300, 50));
+        FourthLine.setPreferredSize(new java.awt.Dimension(300, 50));
+        FourthLine.setLayout(new java.awt.GridLayout());
+
         Dot.setText(".");
+        FourthLine.add(Dot);
 
         Num0.setText("0");
+        FourthLine.add(Num0);
 
         Equal.setText("=");
+        FourthLine.add(Equal);
 
         Divide.setText("/");
-
-        javax.swing.GroupLayout FourthLineLayout = new javax.swing.GroupLayout(FourthLine);
-        FourthLine.setLayout(FourthLineLayout);
-        FourthLineLayout.setHorizontalGroup(
-            FourthLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FourthLineLayout.createSequentialGroup()
-                .addComponent(Dot, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Num0, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Equal, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Divide, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        FourthLineLayout.setVerticalGroup(
-            FourthLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Equal, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-            .addComponent(Num0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Dot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Divide, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        FourthLine.add(Divide);
 
         getContentPane().add(FourthLine);
 
+        FifthLine.setMaximumSize(new java.awt.Dimension(300, 50));
+        FifthLine.setPreferredSize(new java.awt.Dimension(300, 50));
+        FifthLine.setLayout(new java.awt.GridLayout());
+
         DefaultButton.setText("C");
+        FifthLine.add(DefaultButton);
 
         LeftPar.setText("(");
+        FifthLine.add(LeftPar);
 
         RightPar.setText(")");
-
-        javax.swing.GroupLayout FifthLineLayout = new javax.swing.GroupLayout(FifthLine);
-        FifthLine.setLayout(FifthLineLayout);
-        FifthLineLayout.setHorizontalGroup(
-            FifthLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FifthLineLayout.createSequentialGroup()
-                .addComponent(DefaultButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(LeftPar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(RightPar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(NoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        FifthLineLayout.setVerticalGroup(
-            FifthLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(RightPar, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-            .addComponent(LeftPar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(DefaultButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(NoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        FifthLine.add(RightPar);
+        FifthLine.add(NoButton);
 
         getContentPane().add(FifthLine);
 
