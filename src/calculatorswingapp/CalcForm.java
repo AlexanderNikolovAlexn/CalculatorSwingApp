@@ -59,7 +59,6 @@ public class CalcForm extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(350, 350));
         setMinimumSize(new java.awt.Dimension(350, 350));
         setPreferredSize(new java.awt.Dimension(350, 350));
-        setResizable(false);
         setSize(new java.awt.Dimension(350, 350));
         getContentPane().setLayout(new java.awt.GridLayout(6, 0));
 
@@ -70,10 +69,17 @@ public class CalcForm extends javax.swing.JFrame {
         ResultLine.setMaximumSize(new java.awt.Dimension(300, 50));
         ResultLine.setMinimumSize(new java.awt.Dimension(300, 50));
         ResultLine.setPreferredSize(new java.awt.Dimension(300, 50));
-        ResultLine.setLayout(new javax.swing.BoxLayout(ResultLine, javax.swing.BoxLayout.LINE_AXIS));
 
-        ResultLabel.setText("Calculator result: ");
-        ResultLine.add(ResultLabel);
+        javax.swing.GroupLayout ResultLineLayout = new javax.swing.GroupLayout(ResultLine);
+        ResultLine.setLayout(ResultLineLayout);
+        ResultLineLayout.setHorizontalGroup(
+            ResultLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ResultLabel)
+        );
+        ResultLineLayout.setVerticalGroup(
+            ResultLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ResultLabel)
+        );
 
         getContentPane().add(ResultLine);
         ResultLine.getAccessibleContext().setAccessibleName("");
@@ -85,43 +91,116 @@ public class CalcForm extends javax.swing.JFrame {
         FirstLine.setMinimumSize(new java.awt.Dimension(450, 50));
         FirstLine.setName(""); // NOI18N
         FirstLine.setPreferredSize(new java.awt.Dimension(450, 50));
-        FirstLine.setLayout(new java.awt.GridLayout(1, 0));
 
         Num1.setText("1");
-        FirstLine.add(Num1);
+        Num1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Num1MouseReleased(evt);
+            }
+        });
+        Num1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Num1KeyReleased(evt);
+            }
+        });
 
         Num2.setText("2");
-        FirstLine.add(Num2);
+        Num2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Num2MouseReleased(evt);
+            }
+        });
+        Num2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Num2KeyReleased(evt);
+            }
+        });
 
         Num3.setText("3");
-        FirstLine.add(Num3);
+        Num3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Num3MouseReleased(evt);
+            }
+        });
+        Num3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Num3KeyReleased(evt);
+            }
+        });
 
         Plus.setText("+");
-        FirstLine.add(Plus);
+        Plus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                PlusMouseReleased(evt);
+            }
+        });
+        Plus.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                PlusKeyReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout FirstLineLayout = new javax.swing.GroupLayout(FirstLine);
+        FirstLine.setLayout(FirstLineLayout);
+        FirstLineLayout.setHorizontalGroup(
+            FirstLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FirstLineLayout.createSequentialGroup()
+                .addComponent(Num1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Num2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Num3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Plus, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+        FirstLineLayout.setVerticalGroup(
+            FirstLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FirstLineLayout.createSequentialGroup()
+                .addGroup(FirstLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(Num3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                    .addComponent(Num2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Num1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Plus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(244, 244, 244))
+        );
 
         getContentPane().add(FirstLine);
         FirstLine.getAccessibleContext().setAccessibleName("");
 
-        SecondLine.setLayout(new java.awt.GridLayout(1, 0));
-
         Num4.setText("4");
-        SecondLine.add(Num4);
 
         Num5.setText("5");
-        SecondLine.add(Num5);
 
         Num6.setText("6");
-        SecondLine.add(Num6);
 
         Minus.setText("-");
-        SecondLine.add(Minus);
+
+        javax.swing.GroupLayout SecondLineLayout = new javax.swing.GroupLayout(SecondLine);
+        SecondLine.setLayout(SecondLineLayout);
+        SecondLineLayout.setHorizontalGroup(
+            SecondLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SecondLineLayout.createSequentialGroup()
+                .addGap(1, 1, 1)
+                .addComponent(Num4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Num5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Num6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Minus, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        SecondLineLayout.setVerticalGroup(
+            SecondLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Num4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Num5, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Num6, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Minus, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         getContentPane().add(SecondLine);
 
-        ThirdLine.setLayout(new java.awt.GridLayout(1, 0));
-
         Num7.setText("7");
-        ThirdLine.add(Num7);
 
         Num8.setText("8");
         Num8.addActionListener(new java.awt.event.ActionListener() {
@@ -129,43 +208,92 @@ public class CalcForm extends javax.swing.JFrame {
                 Num8ActionPerformed(evt);
             }
         });
-        ThirdLine.add(Num8);
 
         Num9.setText("9");
-        ThirdLine.add(Num9);
 
         Multiply.setText("*");
-        ThirdLine.add(Multiply);
+
+        javax.swing.GroupLayout ThirdLineLayout = new javax.swing.GroupLayout(ThirdLine);
+        ThirdLine.setLayout(ThirdLineLayout);
+        ThirdLineLayout.setHorizontalGroup(
+            ThirdLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ThirdLineLayout.createSequentialGroup()
+                .addGap(1, 1, 1)
+                .addComponent(Num7, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Num8, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Num9, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Multiply, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        ThirdLineLayout.setVerticalGroup(
+            ThirdLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Num7, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Num8, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Num9, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Multiply, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         getContentPane().add(ThirdLine);
 
-        FourthLine.setLayout(new java.awt.GridLayout(1, 0));
-
         Dot.setText(".");
-        FourthLine.add(Dot);
 
         Num0.setText("0");
-        FourthLine.add(Num0);
 
         Equal.setText("=");
-        FourthLine.add(Equal);
 
         Divide.setText("/");
-        FourthLine.add(Divide);
+
+        javax.swing.GroupLayout FourthLineLayout = new javax.swing.GroupLayout(FourthLine);
+        FourthLine.setLayout(FourthLineLayout);
+        FourthLineLayout.setHorizontalGroup(
+            FourthLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FourthLineLayout.createSequentialGroup()
+                .addComponent(Dot, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Num0, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Equal, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(Divide, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        FourthLineLayout.setVerticalGroup(
+            FourthLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Equal, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+            .addComponent(Num0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Dot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Divide, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         getContentPane().add(FourthLine);
 
-        FifthLine.setLayout(new java.awt.GridLayout(1, 0));
-
         DefaultButton.setText("C");
-        FifthLine.add(DefaultButton);
 
         LeftPar.setText("(");
-        FifthLine.add(LeftPar);
 
         RightPar.setText(")");
-        FifthLine.add(RightPar);
-        FifthLine.add(NoButton);
+
+        javax.swing.GroupLayout FifthLineLayout = new javax.swing.GroupLayout(FifthLine);
+        FifthLine.setLayout(FifthLineLayout);
+        FifthLineLayout.setHorizontalGroup(
+            FifthLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FifthLineLayout.createSequentialGroup()
+                .addComponent(DefaultButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(LeftPar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(RightPar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(NoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        FifthLineLayout.setVerticalGroup(
+            FifthLineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(RightPar, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+            .addComponent(LeftPar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(DefaultButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(NoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         getContentPane().add(FifthLine);
 
@@ -176,6 +304,77 @@ public class CalcForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Num8ActionPerformed
 
+    private void Num1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Num1MouseReleased
+        // TODO add your handling code here:
+        setResultText(num1);
+    }//GEN-LAST:event_Num1MouseReleased
+
+    private void Num1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Num1KeyReleased
+        // TODO add your handling code here:
+        char ch = evt.getKeyChar();
+        if(ch == '1') {
+            setResultText(num1);
+        }
+    }//GEN-LAST:event_Num1KeyReleased
+
+    private void Num2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Num2KeyReleased
+        // TODO add your handling code here:
+        char ch = evt.getKeyChar();
+        if(ch == '2') {
+            setResultText(num2);
+        }
+    }//GEN-LAST:event_Num2KeyReleased
+
+    private void Num2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Num2MouseReleased
+        // TODO add your handling code here:
+        setResultText(num2);
+    }//GEN-LAST:event_Num2MouseReleased
+
+    private void Num3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Num3KeyReleased
+        // TODO add your handling code here:
+        char ch = evt.getKeyChar();
+        if(ch == '3') {
+            setResultText(num3);
+        }
+    }//GEN-LAST:event_Num3KeyReleased
+
+    private void Num3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Num3MouseReleased
+        // TODO add your handling code here:
+        setResultText(num3);
+    }//GEN-LAST:event_Num3MouseReleased
+
+    private void PlusKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PlusKeyReleased
+        // TODO add your handling code here:
+        char ch = evt.getKeyChar();
+        if(ch == '+') {
+            setResultText(plus);
+        }
+    }//GEN-LAST:event_PlusKeyReleased
+
+    private void PlusMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PlusMouseReleased
+        // TODO add your handling code here:
+        setResultText(plus);
+    }//GEN-LAST:event_PlusMouseReleased
+
+    private void setResultText(String s) {
+        String currText = ResultLabel.getText();
+        ResultLabel.setText(currText + s);
+    }
+    
+    private final String num1 = "1";
+    private final String num2 = "2";
+    private final String num3 = "3";
+    private final String num4 = "4";
+    private final String num5 = "5";
+    private final String num6 = "6";
+    private final String num7 = "7";
+    private final String num8 = "8";
+    private final String num9 = "9";
+    private final String num0 = "0";
+    
+    private final String plus = "+";
+    
+    
     /**
      * @param args the command line arguments
      */
